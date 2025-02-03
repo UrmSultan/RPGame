@@ -1,12 +1,49 @@
 #include "../include/Player.h"
+#include "../include/Potion.h"
 #include <iostream>
 #include <utility>
 
 using namespace std;
 
 
-Player::Player(string name) : Character(std::move(name), 100, 1, 10, 5), experience(0){
+Player::Player(string name)
+    :Character(std::move(name), 100, 1, 10, 5),
+    experience(0), gold(0),equippedWeapon(nullptr)  {}
 
+void Player::addItem(const shared_ptr<Item>& item) {
+    inventory.addItem(item);
+}
+
+void Player::useItem(int index) {
+    if (index < 0 || index >= inventory.size()) {
+        cout<<"Ошибка: неверный индекс предмета!"<<endl;
+        return;
+    }
+    shared_ptr<Item> item = inventory.getItem(index);
+    if (item) {
+
+        cout<<" Используется предмет: "<<item->getName()<<endl;
+        item->use();
+        if (dynamic_pointer_cast<Potion>(item))
+            inventory.removeItem(index);
+    }
+}
+
+void Player::equipWeapon(const shared_ptr<Weapon>& weapon) {
+    equippedWeapon=weapon;
+    cout<<name<<" экипировал "<< weapon->getName()<<"!"<<endl;
+}
+
+void Player::showInventory() const {
+    inventory.listItem();
+}
+
+void Player::earnGold(int amount) {
+    gold+=amount;
+}
+
+int Player::getGold() const {
+    return gold;
 }
 
 void Player::gainExperience(int exp) {
@@ -16,14 +53,15 @@ void Player::gainExperience(int exp) {
     if (experience >= level *10) {
         level++;
         experience =0;
-        attackPower+=5;
-        defense+=2;
+        attackPower+=1;
+        defense+=1;
         health+=10;
         cout<<name<<" повысил уровень! Теперь уровень: "<<level<<endl;
     }
 }
 
 void Player::attack(Character &target) {
-    cout<<"[Игрок] "<<name<<" атакует!"<<endl;
-    Character::attack(target);
+    int damage = equippedWeapon? attackPower+equippedWeapon->getDamage():attackPower;
+    cout<<name<<" атакует "<<target.getName()<<" с уроном "<<damage<<"!"<<endl;
+    target.takeDamage(damage);
 }
