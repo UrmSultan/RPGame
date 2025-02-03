@@ -7,5 +7,5 @@ enum class QuestStatus {
     NotStarted,
     InProgress,
     Completed,
-    failed
+    Failed
 };

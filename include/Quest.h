@@ -1,16 +1,23 @@
 
 #include <iostream>
+#include "QuestStatus.h"
 
 using namespace std;
 
 class Quest {
 private:
-    string name;
+    string title;
     string description;
     string reward;
-    string status;
+    QuestStatus status;
 public:
+    Quest(string title, string desc);
 
+    void start ();
+    void completed();
+    void fail();
+
+    [[nodiscard]] QuestStatus getStatus() const;
 
 };
 
