@@ -1,23 +1,22 @@
 #pragma once
 
 #include <string>
+#include "ItemRarity.h"
 
 using namespace std;
 
 class Item {
 protected:
     string name;
-    string type;
-    string rarity;
+    ItemRarity rarity;
 public:
-    Item(string itemName, string itemType, string itemRarity);
+    Item(string name, ItemRarity rarity);
 
     virtual void use();
 
-    string getName() const;
-    string getType() const;
-    string getRarity() const;
+    [[nodiscard]] string getName() const;
+    [[nodiscard]] ItemRarity getRarity() const;
 
-    virtual ~Item() {}
+    virtual ~Item() = default;
 };
 

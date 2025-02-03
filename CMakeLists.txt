@@ -17,4 +17,6 @@ add_executable(RPGame src/main.cpp
         include/Quest.h src/Quest.cpp
         include/MagicSystem.h src/MagicSystem.cpp
         include/CraftingSystem.h src/CraftingSystem.cpp
-        include/Merchant.h src/Merchant.cpp include/QuestStatus.h src/QuestStatus.cpp)
+        include/Merchant.h src/Merchant.cpp
+        include/QuestStatus.h
+        include/ItemRarity.h)

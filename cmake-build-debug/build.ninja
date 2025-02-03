@@ -133,12 +133,6 @@ build CMakeFiles/RPGame.dir/src/Merchant.cpp.obj: CXX_COMPILER__RPGame_Debug C$:
   OBJECT_DIR = CMakeFiles\RPGame.dir
   OBJECT_FILE_DIR = CMakeFiles\RPGame.dir\src
 
-build CMakeFiles/RPGame.dir/src/QuestStatus.cpp.obj: CXX_COMPILER__RPGame_Debug C$:/Users/sulta/CLionProjects/RPGame/src/QuestStatus.cpp || cmake_object_order_depends_target_RPGame
-  DEP_FILE = CMakeFiles\RPGame.dir\src\QuestStatus.cpp.obj.d
-  FLAGS = -finput-charset=UTF-8 -fexec-charset=UTF-8 -g -fdiagnostics-color=always -std=gnu++23
-  OBJECT_DIR = CMakeFiles\RPGame.dir
-  OBJECT_FILE_DIR = CMakeFiles\RPGame.dir\src
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target RPGame
@@ -147,7 +141,7 @@ build CMakeFiles/RPGame.dir/src/QuestStatus.cpp.obj: CXX_COMPILER__RPGame_Debug 
 #############################################
 # Link the executable RPGame.exe
 
-build RPGame.exe: CXX_EXECUTABLE_LINKER__RPGame_Debug CMakeFiles/RPGame.dir/src/main.cpp.obj CMakeFiles/RPGame.dir/src/Player.cpp.obj CMakeFiles/RPGame.dir/src/Game.cpp.obj CMakeFiles/RPGame.dir/src/Character.cpp.obj CMakeFiles/RPGame.dir/src/Enemy.cpp.obj CMakeFiles/RPGame.dir/src/Item.cpp.obj CMakeFiles/RPGame.dir/src/Weapon.cpp.obj CMakeFiles/RPGame.dir/src/Armor.cpp.obj CMakeFiles/RPGame.dir/src/Potion.cpp.obj CMakeFiles/RPGame.dir/src/Location.cpp.obj CMakeFiles/RPGame.dir/src/Quest.cpp.obj CMakeFiles/RPGame.dir/src/MagicSystem.cpp.obj CMakeFiles/RPGame.dir/src/CraftingSystem.cpp.obj CMakeFiles/RPGame.dir/src/Merchant.cpp.obj CMakeFiles/RPGame.dir/src/QuestStatus.cpp.obj
+build RPGame.exe: CXX_EXECUTABLE_LINKER__RPGame_Debug CMakeFiles/RPGame.dir/src/main.cpp.obj CMakeFiles/RPGame.dir/src/Player.cpp.obj CMakeFiles/RPGame.dir/src/Game.cpp.obj CMakeFiles/RPGame.dir/src/Character.cpp.obj CMakeFiles/RPGame.dir/src/Enemy.cpp.obj CMakeFiles/RPGame.dir/src/Item.cpp.obj CMakeFiles/RPGame.dir/src/Weapon.cpp.obj CMakeFiles/RPGame.dir/src/Armor.cpp.obj CMakeFiles/RPGame.dir/src/Potion.cpp.obj CMakeFiles/RPGame.dir/src/Location.cpp.obj CMakeFiles/RPGame.dir/src/Quest.cpp.obj CMakeFiles/RPGame.dir/src/MagicSystem.cpp.obj CMakeFiles/RPGame.dir/src/CraftingSystem.cpp.obj CMakeFiles/RPGame.dir/src/Merchant.cpp.obj
   FLAGS = -finput-charset=UTF-8 -fexec-charset=UTF-8 -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\RPGame.dir
