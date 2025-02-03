@@ -1,7 +1,0 @@
-# ninja log v5
-3	563	7602653925786785	CMakeFiles/RPGame.dir/Player.cpp.obj	bb9039be038bfcc
-11	2393	7602710256400939	CMakeFiles/RPGame.dir/main.cpp.obj	fbf798925473c78f
-1961	2068	7602655169781102	RPGame.exe	39fff8bc13016c04
-0	10	0	clean	26d664e9661f3f7a
-8	415	7602710236608148	CMakeFiles/RPGame.dir/Game.cpp.obj	704a98ac1e061029
-15	801	7602710240480086	CMakeFiles/RPGame.dir/Character.cpp.obj	87a3c94bad1e3d1c

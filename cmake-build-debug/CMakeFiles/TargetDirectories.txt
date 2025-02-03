@@ -1,3 +1,0 @@
-C:/Users/sulta/CLionProjects/RPGame/cmake-build-debug/CMakeFiles/RPGame.dir
-C:/Users/sulta/CLionProjects/RPGame/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/sulta/CLionProjects/RPGame/cmake-build-debug/CMakeFiles/rebuild_cache.dir
