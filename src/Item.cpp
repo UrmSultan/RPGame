@@ -1,7 +1,3 @@
-//
-// Created by sulta on 03.02.2025.
-//
-
 #include <utility>
 
 #include "../include/Item.h"
@@ -10,8 +6,8 @@ void Item::use() {
 
 }
 
-Item::Item(string name, ItemRarity rarity)
-        : name(std::move(name)),rarity(rarity){}
+Item::Item(string n, ItemRarity r)
+        : name(std::move(n)),rarity(r){}
 
 string Item::getName() const {
     return name;

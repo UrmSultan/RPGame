@@ -1,6 +1,14 @@
 #pragma once
 
-class Weapon {
+#include "Item.h"
 
+class Weapon : public Item{
+private:
+    int damage;
+public:
+    Weapon(string name, ItemRarity rarity, int damage);
+
+    void use() override;
+    int getDamage() const;
 };
 
