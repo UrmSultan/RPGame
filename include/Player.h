@@ -1,6 +1,4 @@
-
-#ifndef RPGAME_PLAYER_H
-#define RPGAME_PLAYER_H
+#pragma once
 
 #include <string>
 #include "Character.h"
@@ -21,5 +19,3 @@ public:
     void attack(Character& target) override;
 };
 
-
-#endif //RPGAME_PLAYER_H

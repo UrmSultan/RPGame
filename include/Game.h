@@ -1,5 +1,4 @@
-#ifndef RPGAME_GAME_H
-#define RPGAME_GAME_H
+#pragma once
 
 
 class Game {
@@ -8,6 +7,3 @@ public:
     void saveGame();
     void loadGame();
 };
-
-
-#endif //RPGAME_GAME_H

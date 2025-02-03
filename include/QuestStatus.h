@@ -1,6 +1,4 @@
-#ifndef RPGAME_QUESTSTATUS_H
-#define RPGAME_QUESTSTATUS_H
-
+#pragma once
 #include <iostream>
 
 using namespace std;
@@ -11,4 +9,3 @@ enum class QuestStatus {
     Completed,
     failed
 };
-#endif //RPGAME_QUESTSTATUS_H

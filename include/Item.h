@@ -1,5 +1,4 @@
-#ifndef RPGAME_ITEM_H
-#define RPGAME_ITEM_H
+#pragma once
 
 #include <string>
 
@@ -22,5 +21,3 @@ public:
     virtual ~Item() {}
 };
 
-
-#endif //RPGAME_ITEM_H

@@ -1,5 +1,4 @@
-#ifndef RPGAME_CHARACTER_H
-#define RPGAME_CHARACTER_H
+#pragma once
 
 #include <string>
 
@@ -24,5 +23,3 @@ public:
 
     virtual ~Character() = default;
 };
-
-#endif //RPGAME_CHARACTER_H
