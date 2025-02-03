@@ -1,5 +1,4 @@
 #pragma once
-
 #include "Item.h"
 
 class Weapon : public Item{
@@ -9,6 +8,6 @@ public:
     Weapon(string name, ItemRarity rarity, int damage);
 
     void use() override;
-    int getDamage() const;
+    [[nodiscard]] int getDamage() const;
 };
 

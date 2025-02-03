@@ -7,5 +7,5 @@ private:
 public:
     Armor(string name, ItemRarity rarity, int defense);
     void use() override;
-    int getDefense() const;
+    [[nodiscard]] int getDefense() const;
 };
