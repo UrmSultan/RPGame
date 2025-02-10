@@ -1,6 +1,5 @@
 #include "../include/Character.h"
-#include <iostream>
-#include <utility>
+#include <bits/stdc++.h>
 
 Character::Character(string name, int health, int level, int attack, int defense)
 :name(std::move(name)), health(health), level(level), attackPower(attack), defense(defense) {}
@@ -32,6 +31,14 @@ int Character::getHealth() const {
 
 int Character::getLevel() const{
     return level;
+}
+
+int Character::getAttackPower() const {
+    return attackPower;
+}
+
+int Character::getDefense() const {
+    return defense;
 }
 
 

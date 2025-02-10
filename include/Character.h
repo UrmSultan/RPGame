@@ -20,6 +20,8 @@ public:
     [[nodiscard]] string getName() const;
     [[nodiscard]] int getHealth() const;
     [[nodiscard]] int getLevel() const;
+    [[nodiscard]] int getAttackPower() const;
+    [[nodiscard]] int getDefense() const;
 
     virtual ~Character() = default;
 };

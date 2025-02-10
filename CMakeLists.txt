@@ -19,4 +19,4 @@ add_executable(RPGame src/main.cpp
         include/CraftingSystem.h src/CraftingSystem.cpp
         include/Merchant.h src/Merchant.cpp
         include/QuestStatus.h
-        include/ItemRarity.h include/Inventory.h src/Inventory.cpp)
+        include/ItemRarity.h include/Inventory.h src/Inventory.cpp include/CombatSystem.h src/CombatSystem.cpp)
