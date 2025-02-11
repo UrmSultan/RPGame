@@ -1,9 +1,11 @@
 #pragma once
 #include <string>
+
 #include "Character.h"
 #include "Inventory.h"
-#include "Item.h"
 #include "Weapon.h"
+#include "Potion.h"
+#include "Armor.h"
 
 using namespace std;
 
@@ -16,13 +18,11 @@ private:
     int gold;
 public:
     explicit Player(string name);
-    void addItem (const shared_ptr<Item>& item);
-    void useItem (int index);
-    void equipWeapon(const shared_ptr<Weapon>& weapon);
-    void showInventory() const;
+    void addItem(shared_ptr<Item> &item, ItemRarity rarity);
+    Inventory& getInventory();
 
     void earnGold(int amount);
-    int getGold() const;
+    [[nodiscard]] int getGold() const;
 
     void gainExperience(int exp);
 

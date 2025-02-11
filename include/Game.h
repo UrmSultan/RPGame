@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Location.h"
 #include "CombatSystem.h"
+
 #include <vector>
 #include <memory>
 
@@ -19,4 +20,5 @@ public:
     void gameLoop();
     void exploreLocation();
     void fightEnemy();
+    void manageInventory();
 };

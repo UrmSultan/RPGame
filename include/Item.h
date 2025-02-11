@@ -15,7 +15,7 @@ public:
     virtual void use();
 
     [[nodiscard]] string getName() const;
-    [[nodiscard]] ItemRarity getRarity() const;
+    [[nodiscard]] string getRarity() const;
 
     virtual ~Item() = default;
 };

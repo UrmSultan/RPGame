@@ -1,6 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
 #include "../include/Weapon.h"
-
 using namespace std;
 
 Weapon::Weapon(string n, ItemRarity r, int dmg)
@@ -8,8 +7,9 @@ Weapon::Weapon(string n, ItemRarity r, int dmg)
 
 
 void Weapon::use() {
-    cout<<"Вы экипировали "<<name<<" редкость: "<<static_cast<int>(rarity)
-        << ") с уроном "<<damage<<"!"<<endl;
+    cout<<"Вы экипировали "<<name
+        <<" редкость: "<<toString(rarity)
+        << " с уроном "<<damage<<"!"<<endl;
 }
 
 int Weapon::getDamage() const {

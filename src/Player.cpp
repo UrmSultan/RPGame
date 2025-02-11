@@ -10,33 +10,12 @@ Player::Player(string name)
     :Character(std::move(name), 100, 1, 10, 5),
     experience(0), gold(0),equippedWeapon(nullptr)  {}
 
-void Player::addItem(const shared_ptr<Item>& item) {
+void Player::addItem(shared_ptr<Item> &item, ItemRarity rarity) {
     inventory.addItem(item);
 }
 
-void Player::useItem(int index) {
-    if (index < 0 || index >= inventory.size()) {
-        cout<<"Ошибка: неверный индекс предмета!"<<endl;
-        return;
-    }
-    shared_ptr<Item> item = inventory.getItem(index);
-    if (item) {
 
-        cout<<" Используется предмет: "<<item->getName()<<endl;
-        item->use();
-        if (dynamic_pointer_cast<Potion>(item))
-            inventory.removeItem(index);
-    }
-}
 
-void Player::equipWeapon(const shared_ptr<Weapon>& weapon) {
-    equippedWeapon=weapon;
-    cout<<name<<" экипировал "<< weapon->getName()<<"!"<<endl;
-}
-
-void Player::showInventory() const {
-    inventory.listItem();
-}
 
 void Player::earnGold(int amount) {
     gold+=amount;
@@ -64,4 +43,8 @@ void Player::attack(Character &target) {
     int damage = equippedWeapon? attackPower+equippedWeapon->getDamage():attackPower;
     cout<<name<<" атакует "<<target.getName()<<" с уроном "<<damage<<"!"<<endl;
     target.takeDamage(damage);
+}
+
+Inventory& Player::getInventory() {
+    return inventory;
 }

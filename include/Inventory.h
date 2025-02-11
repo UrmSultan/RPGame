@@ -1,5 +1,6 @@
 #pragma once
-#include <bits/stdc++.h>
+#include <vector>
+#include <memory>
 #include "Item.h"
 class Inventory {
 private:
@@ -7,7 +8,6 @@ private:
 public:
     void addItem(const shared_ptr<Item>& item);
     void removeItem(int index);
-    void listItem() const;
-    [[nodiscard]] size_t size() const;
-    shared_ptr<Item> getItem(int index) const;
+    void showInventory();
+    void useItem(int index);
 };

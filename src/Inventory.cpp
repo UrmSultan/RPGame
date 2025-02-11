@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 #include "../include/Inventory.h"
 
 void Inventory::addItem(const shared_ptr<Item>& item) {
@@ -15,19 +15,25 @@ void Inventory::removeItem(int index) {
     }
 }
 
-void Inventory::listItem() const {
-    cout<<"Инвентарь: "<<endl;
-    for (auto i=0; i < items.size(); i++) {
-        cout<<i+1<<") "<<items[i]->getName()<<endl;
+void Inventory::showInventory() {
+    if (items.empty()) {
+        cout<<"Ваш инвентарь пуст.\n";
+        return;
+    }
+
+    cout<<"Ваш инвентарь:\n";
+    for (int i = 0; i < items.size(); ++i) {
+        cout<<i+1<<". "<<items[i]->getName()<<endl;
+    }
+    cout<<endl;
+}
+
+void Inventory::useItem(int index) {
+    if (index >= 0 && index < items.size()){
+        items[index]->use();
+    }
+    else {
+        cout<<"неверный индекс!\n";
     }
 }
 
-size_t Inventory::size() const {
-    return items.size();
-}
-
-shared_ptr<Item> Inventory::getItem(int index) const {
-    if (index >= 0 && index < items.size())
-        return items[index];
-    return nullptr;
-}
