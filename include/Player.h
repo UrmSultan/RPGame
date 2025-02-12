@@ -21,8 +21,9 @@ public:
     void addItem(shared_ptr<Item> &item, ItemRarity rarity);
     Inventory& getInventory();
 
-    void earnGold(int amount);
     [[nodiscard]] int getGold() const;
+    void addGold(int amount);
+    bool spendGold(int amount);
 
     void gainExperience(int exp);
 

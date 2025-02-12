@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Location.h"
 #include "CombatSystem.h"
+#include "Merchant.h"
 
 #include <vector>
 #include <memory>
@@ -21,4 +22,6 @@ public:
     void exploreLocation();
     void fightEnemy();
     void manageInventory();
+    void tradeWithMerchant();
+
 };

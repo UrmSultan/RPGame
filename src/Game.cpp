@@ -32,7 +32,9 @@ void Game::gameLoop() {
         cout<<"1. Исследовать локацию\n";
         cout<<"2. Вступить в бой\n";
         cout<<"3. Открыть инвентарь\n";
-        cout<<"4. Выйти из игры\n";
+        cout<<"4. Искать предметы\n";
+        cout<<"5. Торговать\n";
+        cout<<"6. Выйти из игры\n";
         cout<<"Ваш выбор: ";
 
         int choice;
@@ -50,6 +52,12 @@ void Game::gameLoop() {
                 manageInventory();
                 break;
             case 4:
+                manageInventory();
+                break;
+            case 5:
+                tradeWithMerchant();
+                break;
+            case 6:
                 cout<<"Выход из игры...\n";
                 return;
             default:
@@ -99,5 +107,38 @@ void Game::manageInventory() {
                 cout<<"Неверный выбор \n";
         }
 
+    }
+}
+
+void Game::tradeWithMerchant() {
+    Merchant merchant("Торговец");
+    merchant.addItem(make_shared<Item>("Зелье новичка", ItemRarity::Common));
+    merchant.addItem(make_shared<Item>("Меч новичка", ItemRarity::Uncommon));
+
+    while (true) {
+        cout<<"\n--- Торговля ---\n";
+        merchant.showStock();
+        cout<<"Ваше золото:"<<player->getGold()<<endl;
+        cout<<"1. Купить предмет\n";
+        cout<<"2. Выйти\n";
+        cout<<"Ваш выбор: ";
+
+        int choice;
+        cin>>choice;
+
+        if (choice == 2) break;
+
+        if (choice == 1) {
+            cout<<"Введите номер товара: ";
+            int index;
+            cin>>index;
+            index--;
+
+
+            merchant.sellItem(index, *player);
+        }
+        else {
+            cout<<"Неверный выбор!\n";
+        }
     }
 }
