@@ -22,6 +22,7 @@ public:
     void exploreLocation();
     void fightEnemy();
     void manageInventory();
+    void searchForLoot();
     void tradeWithMerchant();
 
 };

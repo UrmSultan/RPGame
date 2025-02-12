@@ -3,6 +3,7 @@
 
 using namespace std;
 bool const rakNaGoreSvistnet=true;
+
 Game::Game() {
     player = make_shared<Player>("ГГ");
 
@@ -12,7 +13,7 @@ Game::Game() {
 
     auto forest = make_shared<Location>("Темный Лес", "Мрачный лес, полный опасностей.");
     auto village = make_shared<Location>("Деревня", "Спокойное место с торговцами и NPC.");
-
+    forest->addItem(make_shared<Armor>("Кожаная куртка новичка", ItemRarity::Common, 5));
     forest->addConnection(village);
     village->addConnection(forest);
 
@@ -52,7 +53,7 @@ void Game::gameLoop() {
                 manageInventory();
                 break;
             case 4:
-                manageInventory();
+                searchForLoot();
                 break;
             case 5:
                 tradeWithMerchant();
@@ -107,6 +108,26 @@ void Game::manageInventory() {
                 cout<<"Неверный выбор \n";
         }
 
+    }
+}
+
+void Game::searchForLoot() {
+    cout << "Вы ищете предметы...\n";
+    auto currentLocation = locations[0];
+    currentLocation->searchForItem();
+
+    if (currentLocation->getItems().empty()) {
+        cout<<"Пусто..."<<endl;
+    }
+
+    cout << "Хотите взять предмет? (1 - Да, 2 - Нет): ";
+    int choice;
+    cin>>choice;
+
+    if (choice==1) {
+        auto item = currentLocation->getItems().front();
+        player->getInventory().addItem(item);
+        currentLocation->removeItem(0);
     }
 }
 
